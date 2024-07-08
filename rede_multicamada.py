@@ -3,6 +3,14 @@ import numpy as np
 def sigmoid(soma):
     return 1 / (1 + np.exp(-soma))
 
+def sigmoidDerivada(sig):
+    return sig * (1 - sig)
+
+a = sigmoid(0.5)
+print(a)
+b = sigmoidDerivada(a)
+print(b)
+
 #a = np.exp(-1)
 #print(a)
 
@@ -25,4 +33,8 @@ for j in range(epocas):
 
     erroCamadaSaida = saidas - camadaSaida
     mediaAbsoluta = np.mean(np.abs(erroCamadaSaida))
-    print(mediaAbsoluta)
+
+    derivadaSaida = sigmoidDerivada(camadaSaida)
+    deltaSaida = erroCamadaSaida * derivadaSaida
+
+    print(deltaSaida) 
