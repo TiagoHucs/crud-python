@@ -37,4 +37,8 @@ for j in range(epocas):
     derivadaSaida = sigmoidDerivada(camadaSaida)
     deltaSaida = erroCamadaSaida * derivadaSaida
 
-    print(deltaSaida) 
+    pesos1Transposta = pesos1.T
+    deltaSaidaXPeso = deltaSaida.dot(pesos1Transposta) 
+    deltaCamadaOculta = deltaSaidaXPeso * sigmoidDerivada(camadaOculta)
+
+    print(deltaCamadaOculta) 
