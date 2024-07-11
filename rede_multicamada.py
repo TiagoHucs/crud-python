@@ -21,7 +21,9 @@ pesos0 = np.array([[-0.424, -0.740, -0.961],  [0.358, -0.577, -0.469]])
 
 pesos1 = np.array([[-0.017], [-0.893], [0.148]])
 
-epocas = 100
+epocas = 1
+taxaAprendizagem = 0.3
+momento = 1
 
 for j in range(epocas):
     camadaEntrada = entradas
@@ -41,4 +43,8 @@ for j in range(epocas):
     deltaSaidaXPeso = deltaSaida.dot(pesos1Transposta) 
     deltaCamadaOculta = deltaSaidaXPeso * sigmoidDerivada(camadaOculta)
 
-    print(deltaCamadaOculta) 
+    camadaOcultaTransposta = camadaOculta.T
+    pesosNovo1 = camadaOcultaTransposta.dot(deltaSaida)
+    pesos1 = (pesos1 * momento) + (pesosNovo1 * taxaAprendizagem)
+    
+    print(pesos1) 
