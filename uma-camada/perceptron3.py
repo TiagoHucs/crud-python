@@ -1,18 +1,16 @@
 import numpy as np
 
 # AND
-#entradas = np.array([[0,0] , [0,1] , [1,0] , [1,1]])
-#saidas = np.array([0 , 0 , 0 , 1])
+entradas = np.array([[0,0] , [0,1] , [1,0] , [1,1]])
+saidas = np.array([0 , 0 , 0 , 1])
 
 # OR
-entradas = np.array([[0,0] , [0,1] , [1,0] , [1,1]])
-saidas = np.array([0 , 1 , 1 , 1])
+#entradas = np.array([[0,0] , [0,1] , [1,0] , [1,1]])
+#saidas = np.array([0 , 1 , 1 , 1])
 
 # XOR - não é um problema linear
 #entradas = np.array([[0,0] , [0,1] , [1,0] , [1,1]])
 #saidas = np.array([0 , 1 , 1 , 0])
-
-
 
 pesos = np.array([0.0 , 0.0])
 taxaAprendizagem = 0.1
@@ -46,8 +44,6 @@ def treinar():
 
 treinar()
 print('Rede neural treinada')
-print('pesos: ', str(pesos))
-print(calculaSaida(entradas[0]))
-print(calculaSaida(entradas[1]))
-print(calculaSaida(entradas[2]))
-print(calculaSaida(entradas[3]))
+print('Entradas: ',entradas[0],entradas[1],entradas[2],entradas[3])
+print('Pesos: ', str(pesos))
+print('Saídas: ',calculaSaida(entradas[0]),calculaSaida(entradas[1]),calculaSaida(entradas[2]),calculaSaida(entradas[3]))

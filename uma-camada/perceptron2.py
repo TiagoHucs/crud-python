@@ -1,4 +1,3 @@
-#mesmo codigo do anterior com a melhoria do numpy()
 import numpy as np
 
 entradas = np.array([-1 , 7 , 5])
@@ -13,6 +12,6 @@ def stepFunction(soma):
     return 0
 
 s = soma(entradas, pesos)
+print('soma: ', s)
 r = stepFunction(s)
-
 print('stepFunction: ', r)
